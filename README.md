@@ -4,6 +4,21 @@
 >
 > – Phil Karlton
 
-Fastly CDN integration for BEAR.Sunday
+Fastly CDN integration module for BEAR.Sunday
 
-See https://bearsunday.github.io/manuals/1.0/ja/cache.html
+## Example
+
+```php
+use BEAR\FastlyModule\FastlyEnableSoftPurgeModule;
+use BEAR\FastlyModule\FastlyPurgeModule;
+
+// Set API key and service ID
+$this->install(new FastlyPurgeModule(
+    $fastlyApiKey,
+    $fastlyServiceId
+));
+
+// Enable soft purge
+$this->install(new FastlyEnableSoftPurgeModule());
+```
+See more at https://bearsunday.github.io/manuals/1.0/ja/cache.html
