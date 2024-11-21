@@ -10,7 +10,7 @@ use Ray\Di\AbstractModule;
 final class FastlyEnableSoftPurgeModule extends AbstractModule
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function configure(): void
     {
