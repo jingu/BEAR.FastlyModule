@@ -1,14 +1,24 @@
 # BEAR.FastlyModule
-Fastly integration for BEAR.Sunday
 
-## Installation
+> There are only two hard things in Computer Science: cache invalidation and naming things.
+>
+> – Phil Karlton
 
-    composer install
+Fastly CDN integration module for BEAR.Sunday
 
-## Available Commands
+## Example
 
-    composer test              // Run unit test
-    composer tests             // Test and quality checks
-    composer cs-fix            // Fix the coding style
-    composer sa                // Run static analysis tools
-    composer run-script --list // List all commands
+```php
+use BEAR\FastlyModule\FastlyEnableSoftPurgeModule;
+use BEAR\FastlyModule\FastlyPurgeModule;
+
+// Set API key and service ID
+$this->install(new FastlyPurgeModule(
+    $fastlyApiKey,
+    $fastlyServiceId
+));
+
+// Enable soft purge
+$this->install(new FastlyEnableSoftPurgeModule());
+```
+See more at https://bearsunday.github.io/manuals/1.0/ja/cache.html

@@ -17,9 +17,8 @@ class FastlySoftPurgeModuleTest extends TestCase
         $module = new FastlyPurgeModule('apiKey', 'serviceId');
         $module->override(new FastlyEnableSoftPurgeModule(new FakeFastlyPurgeModule()));
 
-        $injector =  new Injector($module, $_ENV['TMP_DIR']);
+        $injector =  new Injector($module);
         $cachePurger = $injector->getInstance(FastlyCachePurgerInterface::class);
-        assert($cachePurger instanceof FastlyCachePurgerInterface);
         ($cachePurger)('fakeTag');
 
         $purgeApi = $injector->getInstance(PurgeApi::class);

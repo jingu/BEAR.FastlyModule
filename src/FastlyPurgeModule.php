@@ -31,7 +31,7 @@ final class FastlyPurgeModule extends AbstractModule
         parent::__construct($module);
     }
 
-    /** {@inheritdoc} */
+    /** {@inheritDoc} */
     protected function configure(): void
     {
         $this->bind(Configuration::class)->annotatedWith(Configuration::class)->toInstance(
